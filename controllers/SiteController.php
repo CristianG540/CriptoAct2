@@ -68,10 +68,23 @@ class SiteController extends Controller
         $valD = $valE->modInverse($numPhi);
 
         return [
-            'valN'   => $valN,
-            'numPhi' => $numPhi,
-            'valD'   => $valD
+            'valN'   => $valN->toString(),
+            'numPhi' => $numPhi->toString(),
+            'valD'   => $valD->toString()
         ];
+    }
+
+    public function actionDesencriptar($msg, $d, $n)
+    {
+        xdebug_break();
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $msg = new BigInteger($msg);
+        $valN = new BigInteger($n);
+        $valD = new BigInteger($d);
+
+        $resultado = $msg->powMod($valD, $valN);
+
+        return $resultado->toString();
     }
 
     /**
