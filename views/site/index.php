@@ -67,26 +67,54 @@ $this->title = 'Cripto';
                         <form role="form">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="control-label" for="exampleInputEmail1">P</label>
-                                    <input class="form-control" id="inputP" disabled>
+                                    <label class="control-label" for="exampleInputEmail1">N</label>
+                                    <input class="form-control" id="inputN" disabled>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="control-label" for="exampleInputPassword1">Q</label>
-                                    <input class="form-control" id="inputQ" disabled>
+                                    <label class="control-label" for="exampleInputPassword1">phi</label>
+                                    <input class="form-control" id="inputPhi" disabled>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <label class="control-label" for="exampleInputPassword1">e</label>
-                                    <input class="form-control" id="inputE" disabled>
+                                    <label class="control-label" for="exampleInputPassword1">d</label>
+                                    <input class="form-control" id="inputD" disabled>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </div>
                 
+            </div>
+        </div>
+
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <h3 class="panel-title">Salida</h3>
+            </div>
+            <div class="panel-body">
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <form role="form">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail1">Introduzca el mensaje para descifrar:</label> <br>
+                                    <textarea id="areaMensaje" cols="70" rows="10" ></textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label" for="exampleInputEmail1">Resultado:</label> <br>
+                                    <textarea id="areaResultado" cols="70" rows="10" ></textarea>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
