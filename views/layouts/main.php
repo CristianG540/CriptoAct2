@@ -51,7 +51,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Ana Maria Gomez, Juan Esteban Quiroz Henao, Cristian Gonzalez Valencia || <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Ana Mar&iacute;a G&oacute;mez Sep&uacute;lveda, Juan Esteban Quiroz Henao, Cristian Gonzalez Valencia || <?= date('Y') ?></p>
 
         <p class="pull-right"> Powered by bread and suntea </p>
     </div>
