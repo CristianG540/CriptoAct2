@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use phpseclib\Math\BigInteger;
 
 class SiteController extends Controller
 {
@@ -50,6 +51,26 @@ class SiteController extends Controller
                 'class' => 'yii\captcha\CaptchaAction',
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
+        ];
+    }
+
+    public function actionGetClaves($p, $q, $e)
+    {
+        xdebug_break();
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $valP = new BigInteger($p);
+        $valQ = new BigInteger($q);
+        $valE = new BigInteger($e);
+
+        $valN = $valP->multiply($valQ);
+        $numPhi = $valP->subtract(new BigInteger(1));
+        $numPhi = $numPhi->multiply( $valQ->subtract(new BigInteger(1)) );
+        $valD = $valE->modInverse($numPhi);
+
+        return [
+            'valN'   => $valN,
+            'numPhi' => $numPhi,
+            'valD'   => $valD
         ];
     }
 
