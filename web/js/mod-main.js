@@ -7,7 +7,7 @@ var modMain = new Vue({
         p        : '',
         q        : '',
         n        : '',
-        e        : '',
+        e        : '65537',
         phi      : '',
         d        : '',
         msg      : '',
@@ -46,5 +46,10 @@ var modMain = new Vue({
             console.log('Error processing your request: ', e);
         }
 
+    },
+    computed : {
+        validData : function() {
+            return ( this.p && this.q && this.e );
+        }
     }
 });

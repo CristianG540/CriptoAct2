@@ -56,7 +56,6 @@ class SiteController extends Controller
 
     public function actionGetClaves($p, $q, $e)
     {
-        xdebug_break();
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $valP = new BigInteger($p);
         $valQ = new BigInteger($q);
@@ -76,15 +75,21 @@ class SiteController extends Controller
 
     public function actionDesencriptar($msg, $d, $n)
     {
-        xdebug_break();
         \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
         $msg = new BigInteger($msg);
         $valN = new BigInteger($n);
         $valD = new BigInteger($d);
 
         $resultado = $msg->powMod($valD, $valN);
+        $resultado = $resultado->toString();
 
-        return $resultado->toString();
+        $newText = "";
+        for ($i = 0; $i < strlen($resultado); $i+=2) {
+            $ascii = substr($resultado, $i, 2);
+            $newText .=  chr( $ascii );
+        }
+
+        return $newText;
     }
 
     /**

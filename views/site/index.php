@@ -46,7 +46,7 @@ $this->title = 'Cripto';
                             </div>
                             
                             <div class="row text-center">
-                                <button type="button" class="btn btn-default" @click="calc">Calcular</button>
+                                <button type="button" class="btn btn-default" @click="calc" :disabled="!validData" >Calcular</button>
                             </div>
                             
                         </form>
@@ -113,7 +113,7 @@ $this->title = 'Cripto';
                             </div>
                         </form>
                         <div class="row text-center">
-                            <button type="button" class="btn btn-default" @click="desencriptar">Desencriptar</button>
+                            <button type="button" class="btn btn-default" @click="desencriptar" :disabled="!msg">Desencriptar</button>
                         </div>
                     </div>
                 </div>
